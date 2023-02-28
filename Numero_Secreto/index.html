@@ -13,31 +13,29 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Numero Secreto</title>
+    <title>Número Secreto</title>
   </head>
   <body>
-    <h1>Acerte o Numero Secreto</h1>
+    <h1>Acerte o número secreto</h1>
 
     <h3>
-      O numero secreto esta entre <span id="menor_valor"> </span> e <span
-        id="maior_valor"
-      >
-        </span
-      >
+      O número secreto está entre <span id="menor-valor">0</span> e
+      <span id="maior-valor">100</span>
     </h3>
 
-    <div class="mensagem" id="Chute">
-      <div>Voce disse:</div>
-      <span class="box">20</span>
-      <span>O numero secreto é maior <i class="fa-solid fa-up-long"></i></span>
+    <div id="chute" class="mensagem">
+      <!-- <div>Você disse:</div>
+        <span class="box">20</span>
+        <div>O número secreto é maior <i class="fa-solid fa-up-long"></i></div> -->
     </div>
 
     <script src="app/sortearNumero.js"></script>
+    <script src="app/reconhecimentDeVoz.js"></script>
   </body>
 </html>
