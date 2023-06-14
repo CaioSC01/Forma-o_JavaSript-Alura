@@ -2,21 +2,33 @@ import { conectaAPI } from "./conectaAPI.js"; // Importando o aquivo conecta Api
 
 const lista = document.querySelector("[data-lista]");
 
-function constroiCard() {
+function constroiCard(titulo, descricao, url, imagem) {
   const video = document.createElement("li");
   video.className = "videos__item";
-  video.innerHTML = ` <iframe width="100%" height="72%" src="https://www.youtube.com/embed/OrnUhR41MYI"
-	title="Voltando ao mercado após a maternidade: Ana Silvério" frameborder="0"
+  video.innerHTML = ` <iframe width="100%" height="72%" src="${url}"
+	title="${titulo}" frameborder="0"
 	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 	allowfullscreen></iframe>
 <div class="descricao-video">
-	<img src="./img/logo.png" alt="logo canal alura">
-	<h3>Voltando ao mercado após a mmaternidade: Ana Silvério</h3>
-	<p>618 visualizações</p>
+	<img src="${imagem}">
+	<h3>${titulo}</h3>
+	<p>${descricao}</p>
 </div>`;
   return video;
 }
 
-async function listaVideo() {
-  const lista = await conectaAPI.listaVideos();
+async function listaVideos() {
+  const listaAPI = await conectaAPI.listaVideos();
+  listaAPI.forEach((element) =>
+    lista.appendChild(
+      constroiCard(
+        element.titulo,
+        element.descricao,
+        element.url,
+        element.imagem
+      )
+    )
+  ); //Significa "PARA CADA" então para cada item da lista algo ira acontecer. AppendChild ele constroi mais filhos para o elemento pai
 }
+
+listaVideos();
